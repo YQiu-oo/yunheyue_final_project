@@ -1,0 +1,3 @@
+D:\cmake\cmake-3.25.0-rc3-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\Hello.dir/objects.a
+D:\MingW64\MinGW64\bin\ar.exe qc CMakeFiles\Hello.dir/objects.a @CMakeFiles\Hello.dir\objects1
+D:\MingW64\MinGW64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Hello.dir/objects.a -Wl,--no-whole-archive -o Hello.exe -Wl,--out-implib,libHello.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Hello.dir\linkLibs.rsp
