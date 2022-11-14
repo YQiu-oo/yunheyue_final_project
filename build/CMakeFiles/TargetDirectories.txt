@@ -1,48 +1,11 @@
-<<<<<<< HEAD
-/workspaces/yunheyue/yunheyue_final_project/build/CMakeFiles/test.dir
-/workspaces/yunheyue/yunheyue_final_project/build/CMakeFiles/main.dir
-/workspaces/yunheyue/yunheyue_final_project/build/CMakeFiles/edit_cache.dir
-/workspaces/yunheyue/yunheyue_final_project/build/CMakeFiles/rebuild_cache.dir
-/workspaces/yunheyue/yunheyue_final_project/build/lib/CMakeFiles/lodepng.dir
-/workspaces/yunheyue/yunheyue_final_project/build/lib/CMakeFiles/cs225.dir
-/workspaces/yunheyue/yunheyue_final_project/build/lib/CMakeFiles/edit_cache.dir
-/workspaces/yunheyue/yunheyue_final_project/build/lib/CMakeFiles/rebuild_cache.dir
-/workspaces/yunheyue/yunheyue_final_project/build/src/CMakeFiles/src.dir
-/workspaces/yunheyue/yunheyue_final_project/build/src/CMakeFiles/edit_cache.dir
-/workspaces/yunheyue/yunheyue_final_project/build/src/CMakeFiles/rebuild_cache.dir
-=======
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/Experimental.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/Nightly.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/Continuous.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyMemoryCheck.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyStart.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyUpdate.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyConfigure.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyBuild.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyTest.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyCoverage.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlyMemCheck.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/NightlySubmit.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalStart.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalUpdate.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalConfigure.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalBuild.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalTest.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalCoverage.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalMemCheck.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ExperimentalSubmit.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousStart.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousUpdate.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousConfigure.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousBuild.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousTest.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousCoverage.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousMemCheck.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/ContinuousSubmit.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/Hello.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/package.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/package_source.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/test.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/edit_cache.dir
-D:/yunheyue-final-project/yunheyue_final_project/build/CMakeFiles/rebuild_cache.dir
->>>>>>> 68b65cf4e898c04663044459c35fac614b3d884f
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/CMakeFiles/test.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/CMakeFiles/main.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/CMakeFiles/edit_cache.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/CMakeFiles/rebuild_cache.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/lib/CMakeFiles/lodepng.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/lib/CMakeFiles/cs225.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/lib/CMakeFiles/edit_cache.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/lib/CMakeFiles/rebuild_cache.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/src/CMakeFiles/src.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/src/CMakeFiles/edit_cache.dir
+/workspaces/CS 225 - Final Project/yunheyue_final_project/build/src/CMakeFiles/rebuild_cache.dir

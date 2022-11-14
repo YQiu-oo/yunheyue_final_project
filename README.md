@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-# yunheyue_final_project
-
-
-# Project Summary
-
-
-# Tools and programming language
-
-
-# Datasets
-
-
-# Algorithm
-
-
-# Timeline
-
-
-
-
-
-
-=======
 # Overview
 
 Airplanes are the most useful transportation for people traveling around the world. We want to make a useful tool that allows people to choose the shortest path between two countries so that people can save their time and enjoy their journey ^-^. The shortest path is one of the choices, if users want to choose their preferred paths, don't worry, our project allows users to choose different paths. Given the datasets, our code base will be able to guide its user in several aspects:
@@ -64,8 +40,3 @@ Week 5(December 8th)
  2. Clean up code.
 
 
-
-
-
-
->>>>>>> 68b65cf4e898c04663044459c35fac614b3d884f
