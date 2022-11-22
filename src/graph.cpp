@@ -70,6 +70,33 @@ int Graph::get_index(int id) {
     return -1;
 }
 
+// void Graph::DFS () {
+//     int i;
+//     for (i = 0; i < vertex_number; i++) {
+//         rosters[i].visited = false;
+//     }
+
+//     for (i = 0; i < vertex_number; i++) {
+//         if (!rosters[i].visited) {
+//             DFS(i);
+//         }
+//     }
+
+// }
+
+// void Graph::DFS_helper (int i) {
+//     int j;
+//     rosters[i].visited = true;
+
+//     cout << rosters[i] << endl;
+
+//     for (j = 0; j < vertex_number; j++) {
+//         if (adjacency_matrix[i][j] != false and !rosters[j].visited) {
+//             DFS(j);
+//         }
+//     }
+// }
+
 int Graph::get_vertex_number() {
     return vertex_number;
 }

@@ -17,6 +17,7 @@ struct vertex {
         city = "";
         latitude = 0.0;
         longitude = 0.0;
+        visited = false;
     }
 
     string name;
@@ -36,7 +37,9 @@ class Graph {
         void get_adjacency_matrix();
         int get_edge_number();
 
-        
+        void DFS ();
+        void DFS_helper (int i);
+
     private:
         int vertex_number;
         int edge_number;
