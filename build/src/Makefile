@@ -131,53 +131,53 @@ src/fast:
 	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
-graph_airport.o: graph_airport.cpp.o
-.PHONY : graph_airport.o
+graph.o: graph.cpp.o
+.PHONY : graph.o
 
 # target to build an object file
-graph_airport.cpp.o:
-	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph_airport.cpp.o
-.PHONY : graph_airport.cpp.o
+graph.cpp.o:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.o
+.PHONY : graph.cpp.o
 
-graph_airport.i: graph_airport.cpp.i
-.PHONY : graph_airport.i
+graph.i: graph.cpp.i
+.PHONY : graph.i
 
 # target to preprocess a source file
-graph_airport.cpp.i:
-	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph_airport.cpp.i
-.PHONY : graph_airport.cpp.i
+graph.cpp.i:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.i
+.PHONY : graph.cpp.i
 
-graph_airport.s: graph_airport.cpp.s
-.PHONY : graph_airport.s
+graph.s: graph.cpp.s
+.PHONY : graph.s
 
 # target to generate assembly for a file
-graph_airport.cpp.s:
-	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph_airport.cpp.s
-.PHONY : graph_airport.cpp.s
+graph.cpp.s:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.s
+.PHONY : graph.cpp.s
 
-hello.o: hello.cpp.o
-.PHONY : hello.o
+read_file.o: read_file.cpp.o
+.PHONY : read_file.o
 
 # target to build an object file
-hello.cpp.o:
-	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/hello.cpp.o
-.PHONY : hello.cpp.o
+read_file.cpp.o:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/read_file.cpp.o
+.PHONY : read_file.cpp.o
 
-hello.i: hello.cpp.i
-.PHONY : hello.i
+read_file.i: read_file.cpp.i
+.PHONY : read_file.i
 
 # target to preprocess a source file
-hello.cpp.i:
-	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/hello.cpp.i
-.PHONY : hello.cpp.i
+read_file.cpp.i:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/read_file.cpp.i
+.PHONY : read_file.cpp.i
 
-hello.s: hello.cpp.s
-.PHONY : hello.s
+read_file.s: read_file.cpp.s
+.PHONY : read_file.s
 
 # target to generate assembly for a file
-hello.cpp.s:
-	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/hello.cpp.s
-.PHONY : hello.cpp.s
+read_file.cpp.s:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/read_file.cpp.s
+.PHONY : read_file.cpp.s
 
 # Help Target
 help:
@@ -188,12 +188,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... src"
-	@echo "... graph_airport.o"
-	@echo "... graph_airport.i"
-	@echo "... graph_airport.s"
-	@echo "... hello.o"
-	@echo "... hello.i"
-	@echo "... hello.s"
+	@echo "... graph.o"
+	@echo "... graph.i"
+	@echo "... graph.s"
+	@echo "... read_file.o"
+	@echo "... read_file.i"
+	@echo "... read_file.s"
 .PHONY : help
 
 

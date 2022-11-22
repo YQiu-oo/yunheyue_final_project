@@ -1,2 +1,2 @@
-/usr/bin/ar qc libsrc.a CMakeFiles/src.dir/graph_airport.cpp.o CMakeFiles/src.dir/hello.cpp.o
+/usr/bin/ar qc libsrc.a CMakeFiles/src.dir/graph.cpp.o CMakeFiles/src.dir/read_file.cpp.o
 /usr/bin/ranlib libsrc.a
