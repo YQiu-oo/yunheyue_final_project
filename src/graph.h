@@ -4,11 +4,14 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#define INF 0x3f3f3f3f
 
 using namespace std;
 
 typedef vector<vector<string>> V2D;
 typedef vector<vector<bool>> Adjacency_Matrix;
+typedef vector<vector<int>> All_path;
+typedef vector<vector<int>> All_distances;
 
 struct vertex {
     vertex() {
@@ -19,12 +22,16 @@ struct vertex {
         longitude = 0.0;
         visited = false;
     }
+    
 
     string name;
     string city;
     string country;
     double latitude;
     double longitude;
+    bool visited;
+    vector<int> path;//each vertex has its own path to the current point.
+                        //mainly use in bfs,store airport id
 };
 
 class Graph {
@@ -37,8 +44,14 @@ class Graph {
         void get_adjacency_matrix();
         int get_edge_number();
 
+        void floyd_warshall();
+        void shortest_Path_helper(int start_idx, int end_idx,vector<vertex>& path);
+        vector<vertex> shortest_Path(int start_id, int end_id);
+
         void DFS ();
         void DFS_helper (int i);
+        static double haversine(double lat1, double lon1, double lat2, double lon2);
+        void bfs(int start_id, int end_id);
 
     private:
         int vertex_number;
@@ -47,4 +60,8 @@ class Graph {
         vector<int> airport_ids; //可以通过这个vector得到制定id的下标
         map<int, vertex> airports; //key is airport_id
         Adjacency_Matrix adjacency_matrix;
+        All_path all_path;//store all pair shortest path
+        All_distances all_distance;// store all pair shortest distance 
+        
 };
+
