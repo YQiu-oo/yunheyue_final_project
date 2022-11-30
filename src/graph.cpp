@@ -6,38 +6,39 @@
 
 //copy from website: https://verytoolz.com/blog/844d2a795f/
 static double haversine(double lat1, double lon1, double lat2, double lon2){
+    // distance between latitudes
+    // and longitudes
 
-        // distance between latitudes
+    double dLat = (lat2 - lat1) * M_PI / 180.0;
 
-        // and longitudes
+    double dLon = (lon2 - lon1) * M_PI / 180.0;
+        // convert to radians
+    lat1 = (lat1) * M_PI / 180.0;
 
-        double dLat = (lat2 - lat1) * M_PI / 180.0;
+    lat2 = (lat2) * M_PI / 180.0;
 
-        double dLon = (lon2 - lon1) * M_PI / 180.0;
+        // apply formula
 
-         // convert to radians
+    double a = pow(sin(dLat / 2), 2) +
 
-        lat1 = (lat1) * M_PI / 180.0;
+                pow(sin(dLon / 2), 2) *
 
-        lat2 = (lat2) * M_PI / 180.0;
+                cos(lat1) * cos(lat2);
 
-         // apply formula
+    double rad = 6371;
 
-        double a = pow(sin(dLat / 2), 2) +
+    double c = 2 * asin(sqrt(a));
 
-                   pow(sin(dLon / 2), 2) *
+    return rad * c;
 
-                   cos(lat1) * cos(lat2);
+}
 
-        double rad = 6371;
-
-        double c = 2 * asin(sqrt(a));
-
-        return rad * c;
-
-    }
 Graph::Graph(V2D airports_datas, V2D routes_datas) {
-    //这个forloop将所有的airports存进map容器里
+    //Store all airport numbers in vector<int> airport_ids
+    /*
+        Store all airport numbers as keys(int) in map<int, vertex> airports
+        Store all name, city, country, latitude, and longitude as values(vertex) in map<int, vertex> airports
+    */
     for (size_t i = 0; i < airports_datas.size(); i++) {
         vertex vertex;
         vertex.name = airports_datas[i][1];
@@ -53,15 +54,17 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         airport_ids.push_back(airport_id);
     }
 
-    vertex_number = airport_ids.size(); //顶点总数
+    vertex_number = airport_ids.size(); //total number of vertex
 
-    //初始化整个矩阵(全部为false)
+    //Initialize adjacency_matrix
+    //The element inside the container defaults to false
     adjacency_matrix.resize(vertex_number);
     for (int i = 0; i < vertex_number; i++) {
         adjacency_matrix[i].resize(vertex_number);
     }
-
-    //将airports中不存在的id删除
+    
+    //Third transition invalid data
+    //Delete the non-existent airport based on vector<int> airport_ids.
     for (size_t i = 0; i < routes_datas.size(); i++) {
         bool flag = false;
         for (size_t j = 0; j < routes_datas[i].size(); j++) {
@@ -76,18 +79,23 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         }
     }
 
-    //routes_datas的size是66771
-    //adjacency_matrix中标记为true的点为36907
-    //这是因为有一些航线的起点和终点是一样的，但是他们的航空公司不一样
-
-    //根据routes_datas 给adjacency_matrix 填充上关系(给图的点连线)
+    //According to the routes_datas, mark the route relations in the adjacency_matrix 
+    //(give the points of the graph to be connected)
     for (size_t i = 0; i < routes_datas.size(); i++) {
         adjacency_matrix[get_index(stoi(routes_datas[i][0]))][get_index(stoi(routes_datas[i][1]))] = true;
     }
 
-    //计算边的数量; 
+    //After filtering the invalid data, we get 66771 routes from routes.dat
+    //However, the total number of routes marked in adjacency_matrix is 36907
+    /*
+        This is because there are routes that start and end at the same point, 
+        but they are on different airlines. We consider this situation as one route.
+    */
+
+
+    //Calculate the number of edges in the graph;
     int count_edge = 0;
-    for (size_t i = 0; i < adjacency_matrix.size(); i++) { //可能有点问题
+    for (size_t i = 0; i < adjacency_matrix.size(); i++) {
         for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
             if (adjacency_matrix[i][j] == true) {
                 count_edge++;
@@ -96,6 +104,7 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
     }
     edge_number = count_edge / 2;
 
+    
     for (size_t i = 0; i < adjacency_matrix.size(); i++) { 
         for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
             if(i == j) { 
@@ -125,32 +134,6 @@ int Graph::get_index(int id) {
     return -1;
 }
 
-// void Graph::DFS () {
-//     int i;
-//     for (i = 0; i < vertex_number; i++) {
-//         rosters[i].visited = false;
-//     }
-
-//     for (i = 0; i < vertex_number; i++) {
-//         if (!rosters[i].visited) {
-//             DFS(i);
-//         }
-//     }
-
-// }
-
-// void Graph::DFS_helper (int i) {
-//     int j;
-//     rosters[i].visited = true;
-
-//     cout << rosters[i] << endl;
-
-//     for (j = 0; j < vertex_number; j++) {
-//         if (adjacency_matrix[i][j] != false and !rosters[j].visited) {
-//             DFS(j);
-//         }
-//     }
-// }
 
 int Graph::get_vertex_number() {
     return vertex_number;

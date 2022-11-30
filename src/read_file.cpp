@@ -23,7 +23,15 @@ V2D read_airports(const string & filename){
                     current.pop_back();
                     temp.push_back(current);
                 } else if (index == 2) {
-                    if(current == "\"") { // 因为文件中city有空string
+                    if(current == "\"") { //First transition invalid data
+                                          //City has an empty string in the data
+                                          //Example from airports.dat
+                                          /*
+                                            12025,"Gunnedah Airport","","Australia", .....
+                                            12026,"Hay Airport","","Australia", .....
+                                            12027,"Hopetoun Airport","","Australia", .....
+                                            12028,"Kerang Airport","","Australia", .....
+                                          */
                         current.clear();
                     } else {
                         current.erase(current.begin());
@@ -75,7 +83,7 @@ V2D read_routes(const string & filename) {
                     temp.push_back(current);
                 } else if (index == 5) {
                     temp.push_back(current);
-                    break; // 减少运行时间
+                    break; // saved running time
                 }
 
                 current.clear();
@@ -89,7 +97,15 @@ V2D read_routes(const string & filename) {
         current.clear();
     }
 
-    for (size_t i = 0; i < routes.size(); i++) { //删除 \N
+    //Second transition invalid data
+    //Some datas may start or end with "\N"
+    //Example from routes.dat
+    /*
+        EP,2923,THR,2131,DEF,\N,,0,AT7 100
+        EP,2923,THR,2131,GCH,\N,,0,AT7
+        EP,2923,THR,2131,KHY,\N,,0,AT7
+    */
+    for (size_t i = 0; i < routes.size(); i++) {
         bool flag = false;
         for (size_t j = 0; j < routes[i].size(); j++) {
             if (routes[i][j] == "\\N") {

@@ -23,7 +23,6 @@ struct vertex {
         visited = false;
     }
     
-
     string name;
     string city;
     string country;
@@ -38,7 +37,7 @@ class Graph {
     public:
         Graph(V2D airports_datas, V2D routes_datas);
         void graph_connect();
-        int get_index(int id);
+        int get_index(int id); //Get the subscript of the specified id
         int get_vertex_number();
         void get_airport_ids();
         void get_adjacency_matrix();
@@ -57,7 +56,7 @@ class Graph {
         int vertex_number;
         int edge_number;
 
-        vector<int> airport_ids; //可以通过这个vector得到制定id的下标
+        vector<int> airport_ids; //all airport id from airports.dat
         map<int, vertex> airports; //key is airport_id
         Adjacency_Matrix adjacency_matrix;
         All_path all_path;//store all pair shortest path
