@@ -49,7 +49,7 @@ class Graph {
 
         void DFS ();
         void DFS_helper (int i);
-        static double haversine(double lat1, double lon1, double lat2, double lon2);
+        double haversine(double lat1, double lon1, double lat2, double lon2);
         void bfs(int start_id, int end_id);
 
     private:

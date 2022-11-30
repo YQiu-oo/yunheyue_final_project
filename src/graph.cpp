@@ -5,7 +5,7 @@
 
 
 //copy from website: https://verytoolz.com/blog/844d2a795f/
-static double haversine(double lat1, double lon1, double lat2, double lon2){
+double haversine(double lat1, double lon1, double lat2, double lon2){
     // distance between latitudes
     // and longitudes
 
@@ -92,7 +92,6 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         but they are on different airlines. We consider this situation as one route.
     */
 
-
     //Calculate the number of edges in the graph;
     int count_edge = 0;
     for (size_t i = 0; i < adjacency_matrix.size(); i++) {
@@ -104,25 +103,25 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
     }
     edge_number = count_edge / 2;
 
-    
-    for (size_t i = 0; i < adjacency_matrix.size(); i++) { 
-        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-            if(i == j) { 
-                all_distance[i][j] = 0;
-                all_path[i][j] = -1;
-                continue;
-            }
-            all_path[i][j] = j;
-            if (adjacency_matrix[i][j] == true) {
-                double i_dis = haversine(airports[airport_ids[i]].latitude, airports[airport_ids[i]].longitude,
-                airports[airport_ids[j]].latitude, airports[airport_ids[j]].longitude);
-                int dis = (int) i_dis;
-                all_distance[i][j] = dis;
-            }else if(adjacency_matrix[i][j] == false) {
-                all_distance[i][j] = INF;
-            }
-        }
-    }
+
+    // for (size_t i = 0; i < adjacency_matrix.size(); i++) { 
+    //     for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
+    //         if(i == j) { 
+    //             all_distance[i][j] = 0;
+    //             all_path[i][j] = -1;
+    //             continue;
+    //         }
+    //         all_path[i][j] = j;
+    //         if (adjacency_matrix[i][j] == true) {
+    //             double i_dis = haversine(airports[airport_ids[i]].latitude, airports[airport_ids[i]].longitude,
+    //             airports[airport_ids[j]].latitude, airports[airport_ids[j]].longitude);
+    //             int dis = (int) i_dis;
+    //             all_distance[i][j] = dis;
+    //         }else if(adjacency_matrix[i][j] == false) {
+    //             all_distance[i][j] = INF;
+    //         }
+    //     }
+    // }
 }
 
 int Graph::get_index(int id) {
@@ -208,7 +207,7 @@ void Graph::bfs(int start_id, int end_id){
             return;
         }
         int idx = get_index(now);
-        for(size_t i = 0; i < vertex_number; i++) {
+        for(int i = 0; i < vertex_number; i++) {
             if(adjacency_matrix[idx][i] == true) {
                 if(find(visited.begin(), visited.end(), airport_ids[i]) == visited.end()) {
                     q.push(airport_ids[i]);
@@ -223,9 +222,5 @@ void Graph::bfs(int start_id, int end_id){
             }
 
         }
-
-
     }
-
-
 }

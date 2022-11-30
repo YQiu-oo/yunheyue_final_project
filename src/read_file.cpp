@@ -9,6 +9,7 @@ V2D read_airports(const string & filename){
     ifstream ifs{filename};
     for(string line; getline(ifs, line); line = "") {
         int index = 0;
+        bool flag = false;
 
         if (line.empty()) {
             continue;
@@ -23,19 +24,18 @@ V2D read_airports(const string & filename){
                     current.pop_back();
                     temp.push_back(current);
                 } else if (index == 2) {
-                    if(current == "\"") { //First transition invalid data
-                                          //City has an empty string in the data
-                                          //Example from airports.dat
-                                          /*
+                    current.erase(current.begin());
+                    current.pop_back();
+                    if (current.empty()) { //First transition invalid data
+                                           //City has an empty string in the data
+                                           //Example from airports.dat
+                                           /*
                                             12025,"Gunnedah Airport","","Australia", .....
                                             12026,"Hay Airport","","Australia", .....
                                             12027,"Hopetoun Airport","","Australia", .....
                                             12028,"Kerang Airport","","Australia", .....
-                                          */
-                        current.clear();
-                    } else {
-                        current.erase(current.begin());
-                        current.pop_back();
+                                           */
+                        flag = true;
                     }
                     temp.push_back(current);
                 } else if (index == 3) {
@@ -55,7 +55,9 @@ V2D read_airports(const string & filename){
                 current += line[i];
             }
         }
-        airports.push_back(temp);
+        if (flag == false) {
+            airports.push_back(temp);
+        }
         temp.clear();
         current.clear();
     }

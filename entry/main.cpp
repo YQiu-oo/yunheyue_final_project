@@ -6,6 +6,16 @@ using namespace std;
 
 int main() {
     V2D airports = read_airports("../tests/data_project/airports.dat");
+    // for (size_t i = 0; i < airports.size(); i++) {
+    //     for (size_t j = 0; j < airports[i].size(); j++) {
+    //         cout << airports[i][j] << ", ";
+    //     }
+    //     cout << endl;
+    // }
+
+
+
+
     // cout << airports[6618][4] << "," << airports[6618][5] << endl;
 
     // stold(airports[632][4]);
@@ -36,9 +46,10 @@ int main() {
 
     // cout << routes.size() << endl;
     Graph graph(airports, routes);
-    cout << graph.get_edge_number() << endl;
+    cout << graph.get_vertex_number() << endl;
+    // cout << graph.get_edge_number() << endl;
 
-    // graph.get_adjacency_matrix();
+    graph.get_adjacency_matrix();
     // cout << graph.get_vertex_number() << endl;
     // graph.get_airport_ids();
     // for (auto i : graph.airports) {
