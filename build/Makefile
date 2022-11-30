@@ -206,6 +206,30 @@ entry/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.s
 .PHONY : entry/main.cpp.s
 
+tests/data_project/test_data.o: tests/data_project/test_data.cpp.o
+.PHONY : tests/data_project/test_data.o
+
+# target to build an object file
+tests/data_project/test_data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_data.cpp.o
+.PHONY : tests/data_project/test_data.cpp.o
+
+tests/data_project/test_data.i: tests/data_project/test_data.cpp.i
+.PHONY : tests/data_project/test_data.i
+
+# target to preprocess a source file
+tests/data_project/test_data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_data.cpp.i
+.PHONY : tests/data_project/test_data.cpp.i
+
+tests/data_project/test_data.s: tests/data_project/test_data.cpp.s
+.PHONY : tests/data_project/test_data.s
+
+# target to generate assembly for a file
+tests/data_project/test_data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_data.cpp.s
+.PHONY : tests/data_project/test_data.cpp.s
+
 tests/sb.o: tests/sb.cpp.o
 .PHONY : tests/sb.o
 
@@ -246,6 +270,9 @@ help:
 	@echo "... entry/main.o"
 	@echo "... entry/main.i"
 	@echo "... entry/main.s"
+	@echo "... tests/data_project/test_data.o"
+	@echo "... tests/data_project/test_data.i"
+	@echo "... tests/data_project/test_data.s"
 	@echo "... tests/sb.o"
 	@echo "... tests/sb.i"
 	@echo "... tests/sb.s"
