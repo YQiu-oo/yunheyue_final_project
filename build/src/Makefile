@@ -131,6 +131,30 @@ src/fast:
 	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
+draw.o: draw.cpp.o
+.PHONY : draw.o
+
+# target to build an object file
+draw.cpp.o:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/draw.cpp.o
+.PHONY : draw.cpp.o
+
+draw.i: draw.cpp.i
+.PHONY : draw.i
+
+# target to preprocess a source file
+draw.cpp.i:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/draw.cpp.i
+.PHONY : draw.cpp.i
+
+draw.s: draw.cpp.s
+.PHONY : draw.s
+
+# target to generate assembly for a file
+draw.cpp.s:
+	cd "/workspaces/CS 225 - Final Project/yunheyue_final_project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/draw.cpp.s
+.PHONY : draw.cpp.s
+
 graph.o: graph.cpp.o
 .PHONY : graph.o
 
@@ -188,6 +212,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... src"
+	@echo "... draw.o"
+	@echo "... draw.i"
+	@echo "... draw.s"
 	@echo "... graph.o"
 	@echo "... graph.i"
 	@echo "... graph.s"

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/src.dir/draw.cpp.o"
+  "CMakeFiles/src.dir/draw.cpp.o.d"
   "CMakeFiles/src.dir/graph.cpp.o"
   "CMakeFiles/src.dir/graph.cpp.o.d"
   "CMakeFiles/src.dir/read_file.cpp.o"
