@@ -36,6 +36,7 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         vertex.latitude = stod(airports_datas[i][4]);
         vertex.longitude = stod(airports_datas[i][5]);
 
+        //
         int airport_id = stoi(airports_datas[i][0]);
         airports.insert(make_pair(airport_id, vertex));
         airport_ids.push_back(airport_id);
