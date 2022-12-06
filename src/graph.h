@@ -39,7 +39,7 @@ class Graph {
         void graph_connect();
         int get_index(int id); //Get the subscript of the specified id
         int get_vertex_number();
-        void get_airport_ids();
+        void print_airport_ids();
         void get_adjacency_matrix();
         vector<int> get_airport_ids();
         int get_edge_number();

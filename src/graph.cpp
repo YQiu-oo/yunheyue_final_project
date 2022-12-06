@@ -109,13 +109,13 @@ int Graph::get_edge_number() {
     return edge_number;
 }
 
-void Graph::get_airport_ids() {
+void Graph::print_airport_ids() {
     for (size_t i = 0; i < airport_ids.size(); i++) {
         cout << airport_ids[i] << ", ";
     }
 }
 
-vector<int> get_airport_ids() {
+vector<int> Graph::get_airport_ids() {
     return airport_ids;
 }
 
