@@ -12,3 +12,5 @@ typedef vector<vector<string>> V2D;
 V2D read_airports(const string & filename);
 
 V2D read_routes(const string & filename);
+
+int get_index(int id, V2D airports);

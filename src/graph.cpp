@@ -6,31 +6,20 @@
 
 //copy from website: https://verytoolz.com/blog/844d2a795f/
 double haversine(double lat1, double lon1, double lat2, double lon2){
-    // distance between latitudes
-    // and longitudes
-
+    // distance between latitudes and longitudes
     double dLat = (lat2 - lat1) * M_PI / 180.0;
-
     double dLon = (lon2 - lon1) * M_PI / 180.0;
-        // convert to radians
-    lat1 = (lat1) * M_PI / 180.0;
 
+    // convert to radians
+    lat1 = (lat1) * M_PI / 180.0;
     lat2 = (lat2) * M_PI / 180.0;
 
-        // apply formula
-
-    double a = pow(sin(dLat / 2), 2) +
-
-                pow(sin(dLon / 2), 2) *
-
-                cos(lat1) * cos(lat2);
-
+    // apply formula
+    double a = pow(sin(dLat / 2), 2) + pow(sin(dLon / 2), 2) * cos(lat1) * cos(lat2);
     double rad = 6371;
-
     double c = 2 * asin(sqrt(a));
 
     return rad * c;
-
 }
 
 Graph::Graph(V2D airports_datas, V2D routes_datas) {
@@ -44,10 +33,8 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         vertex.name = airports_datas[i][1];
         vertex.city = airports_datas[i][2];
         vertex.country = airports_datas[i][3];
-        if (i != 6618) {
-            vertex.latitude = stod(airports_datas[i][4]);
-            vertex.longitude = stod(airports_datas[i][5]);
-        }
+        vertex.latitude = stod(airports_datas[i][4]);
+        vertex.longitude = stod(airports_datas[i][5]);
 
         int airport_id = stoi(airports_datas[i][0]);
         airports.insert(make_pair(airport_id, vertex));
@@ -63,7 +50,7 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         adjacency_matrix[i].resize(vertex_number);
     }
     
-    //Third transition invalid data
+    //Fourth transition invalid data
     //Delete the non-existent airport based on vector<int> airport_ids.
     for (size_t i = 0; i < routes_datas.size(); i++) {
         bool flag = false;

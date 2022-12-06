@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    V2D airports = read_airports("../tests/data_project/airports.dat");
+    V2D airports = read_airports("../tests/data_project/airports_small1.dat");
     // for (size_t i = 0; i < airports.size(); i++) {
     //     for (size_t j = 0; j < airports[i].size(); j++) {
     //         cout << airports[i][j] << ", ";
@@ -28,7 +28,7 @@ int main() {
     //     cout << endl;
     // }
 
-    V2D routes = read_routes("../tests/data_project/routes.dat");
+    V2D routes = read_routes("../tests/data_project/routes_small1.dat");
     // for (size_t i = 0; i < routes.size(); i++) {
     //     cout << routes[i][0] << "," << routes[i][1] << endl;
     // }
@@ -46,10 +46,11 @@ int main() {
 
     // cout << routes.size() << endl;
     Graph graph(airports, routes);
-    cout << graph.get_vertex_number() << endl;
+    graph.get_adjacency_matrix();
+    // cout << graph.get_vertex_number() << endl;
     // cout << graph.get_edge_number() << endl;
 
-    graph.get_adjacency_matrix();
+    // graph.get_adjacency_matrix();
     // cout << graph.get_vertex_number() << endl;
     // graph.get_airport_ids();
     // for (auto i : graph.airports) {

@@ -61,6 +61,5 @@ class Graph {
         Adjacency_Matrix adjacency_matrix;
         All_path all_path;//store all pair shortest path
         All_distances all_distance;// store all pair shortest distance 
-        
 };
 

@@ -62,6 +62,19 @@ V2D read_airports(const string & filename){
         current.clear();
     }
 
+    //Second transition invalid data
+    //Cape Town Waterfort Heliport has an invalid latitude and longitude
+    //data from airports.dat
+    /*
+    9766,"Cape Town Waterfort Heliport","Cap Town","South Africa",\N,"FADW",0,0,0,2,"N","Africa/Johannesburg","airport","OurAirports"
+    */
+    for (size_t i = 0; i < airports.size(); i++) {
+        if (i == 6618) {
+            airports.erase(airports.begin() + i);
+            break;
+        }
+    }
+
     return airports;
 }
 
@@ -99,7 +112,7 @@ V2D read_routes(const string & filename) {
         current.clear();
     }
 
-    //Second transition invalid data
+    //Third transition invalid data
     //Some datas may start or end with "\N"
     //Example from routes.dat
     /*
