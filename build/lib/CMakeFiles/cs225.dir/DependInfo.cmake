@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/CS 225 - Final Project/yunheyue_final_project/lib/cs225/HSLAPixel.cpp" "lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o" "gcc" "lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o.d"
-  "/workspaces/CS 225 - Final Project/yunheyue_final_project/lib/cs225/PNG.cpp" "lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o" "gcc" "lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o.d"
+  "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib/cs225/HSLAPixel.cpp" "lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o" "gcc" "lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o.d"
+  "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib/cs225/PNG.cpp" "lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o" "gcc" "lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/workspaces/CS 225 - Final Project/yunheyue_final_project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
+  "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

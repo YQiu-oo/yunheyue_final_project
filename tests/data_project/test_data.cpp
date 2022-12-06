@@ -6,7 +6,7 @@
 #include <vector>
 #include <set>
 #include "read_file.h"
-
+#include "graph.h"
 
 TEST_CASE("read_route_file Test1", "[weight=5]"){
     V2D routes = read_routes("../tests/data_project/routes_small1.dat");
@@ -74,3 +74,17 @@ Example:
                                        {0, 0, 1, 0}};
 
 */
+TEST_CASE("Matrix Test1", "[weight=5]"){
+    V2D airports = read_airports("/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/tests/data_project/airport1.dat");
+    V2D routes = read_routes("/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/tests/data_project/route1.dat");
+
+    Graph graph(airports, routes);
+    Adjacency_Matrix realoutput = graph.get_adjacency_matrix();
+    const Adjacency_Matrix correct_matrix = {{0,1,1,1,0},\
+                                             {0,0,1,1,0},\
+                                             {1,0,0,1,0},\
+                                             {0,0,0,0,1},\
+                                             {1,0,1,0,0}};
+    vector<vertex> my_ = graph.floyd_warshall(4, 3);
+    REQUIRE(realoutput == correct_matrix);
+}

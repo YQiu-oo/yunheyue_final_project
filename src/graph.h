@@ -34,7 +34,7 @@ struct vertex {
 };
 
 class Graph {
-    public:
+   public:
         Graph(V2D airports_datas, V2D routes_datas);
         void graph_connect();
         int get_index(int id); //Get the subscript of the specified id
@@ -69,8 +69,7 @@ class Graph {
         Adjacency_Matrix adjacency_matrix;
         vector<vector<int>> routes;
 
-        All_path all_path;//store all pair shortest path
-        All_distances all_distance;// store all pair shortest distance 
+       
         
 };
 
