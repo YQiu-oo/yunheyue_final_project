@@ -6,31 +6,19 @@
 
 //copy from website: https://verytoolz.com/blog/844d2a795f/
 double haversine(double lat1, double lon1, double lat2, double lon2){
-    // distance between latitudes
-    // and longitudes
-
+    // distance between latitudes and longitudes
     double dLat = (lat2 - lat1) * M_PI / 180.0;
-
     double dLon = (lon2 - lon1) * M_PI / 180.0;
-        // convert to radians
-    lat1 = (lat1) * M_PI / 180.0;
 
+    // convert to radians
+    lat1 = (lat1) * M_PI / 180.0;
     lat2 = (lat2) * M_PI / 180.0;
 
-        // apply formula
-
-    double a = pow(sin(dLat / 2), 2) +
-
-                pow(sin(dLon / 2), 2) *
-
-                cos(lat1) * cos(lat2);
-
+    // apply formula
+    double a = pow(sin(dLat / 2), 2) + pow(sin(dLon / 2), 2) * cos(lat1) * cos(lat2);
     double rad = 6371;
-
     double c = 2 * asin(sqrt(a));
-
     return rad * c;
-
 }
 
 Graph::Graph(V2D airports_datas, V2D routes_datas) {
@@ -44,10 +32,8 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
         vertex.name = airports_datas[i][1];
         vertex.city = airports_datas[i][2];
         vertex.country = airports_datas[i][3];
-        if (i != 6618) {
-            vertex.latitude = stod(airports_datas[i][4]);
-            vertex.longitude = stod(airports_datas[i][5]);
-        }
+        vertex.latitude = stod(airports_datas[i][4]);
+        vertex.longitude = stod(airports_datas[i][5]);
 
         int airport_id = stoi(airports_datas[i][0]);
         airports.insert(make_pair(airport_id, vertex));
@@ -104,24 +90,6 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
     edge_number = count_edge / 2;
 
 
-    // for (size_t i = 0; i < adjacency_matrix.size(); i++) { 
-    //     for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-    //         if(i == j) { 
-    //             all_distance[i][j] = 0;
-    //             all_path[i][j] = -1;
-    //             continue;
-    //         }
-    //         all_path[i][j] = j;
-    //         if (adjacency_matrix[i][j] == true) {
-    //             double i_dis = haversine(airports[airport_ids[i]].latitude, airports[airport_ids[i]].longitude,
-    //             airports[airport_ids[j]].latitude, airports[airport_ids[j]].longitude);
-    //             int dis = (int) i_dis;
-    //             all_distance[i][j] = dis;
-    //         }else if(adjacency_matrix[i][j] == false) {
-    //             all_distance[i][j] = INF;
-    //         }
-    //     }
-    // }
 }
 
 int Graph::get_index(int id) {
@@ -132,7 +100,6 @@ int Graph::get_index(int id) {
     }
     return -1;
 }
-
 
 int Graph::get_vertex_number() {
     return vertex_number;
@@ -157,7 +124,37 @@ void Graph::get_adjacency_matrix() {
     }
 }
 
- void Graph::floyd_warshall() {
+ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
+    All_distances all_distance;
+    All_path all_path;
+    all_distance.resize(vertex_number);
+    all_path.resize(vertex_number);
+
+    for (int i = 0; i < vertex_number; i++) {
+        all_distance[i].resize(vertex_number);
+        all_path[i].resize(vertex_number);
+
+    }
+    for (size_t i = 0; i < adjacency_matrix.size(); i++) { 
+        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
+            if(i == j) { 
+                all_distance[i][j] = 0;
+                all_path[i][j] = -1;
+                continue;
+            }
+            all_path[i][j] = j;
+            if (adjacency_matrix[i][j] == true) {
+                double i_dis = haversine(airports[airport_ids[i]].latitude, airports[airport_ids[i]].longitude,
+                airports[airport_ids[j]].latitude, airports[airport_ids[j]].longitude);
+                int dis = (int) i_dis;
+                all_distance[i][j] = dis;
+            }else if(adjacency_matrix[i][j] == false) {
+                all_distance[i][j] = INF;
+            }
+        }
+    }
+
+    
     int num_of_vertex = get_vertex_number();
     for(int k = 0; k < num_of_vertex; k++ ) {
         for(int i = 0; i <  num_of_vertex; i++) {
@@ -169,8 +166,22 @@ void Graph::get_adjacency_matrix() {
             }
         }
     }
- }
+    vector<vertex> path;
+    int start_idx = get_index(start_id);
+    int end_idx = get_index(end_id);
+    if(all_path[start_idx][end_idx]) {
+        return path;
+    }
 
+    vertex v = airports[start_idx];
+    path.push_back(v);
+    while(all_path[start_idx][end_idx] != end_idx) {
+        start_idx = all_path[start_idx][end_idx];
+        path.push_back(airports[get_index(start_idx)]);
+    }
+   return path;
+ }
+ 
  vector<vertex> Graph::shortest_Path(int start_id, int end_id){
 
     int start_idx = get_index(start_id);
