@@ -219,6 +219,7 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
 
     vertex v = airports[start_id];
     cout << v.city << endl;
+    cout << v.city << endl;
 
     path.push_back(v);
 
