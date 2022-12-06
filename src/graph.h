@@ -41,6 +41,7 @@ class Graph {
         int get_vertex_number();
         void get_airport_ids();
         void get_adjacency_matrix();
+        vector<int> get_airport_ids();
         int get_edge_number();
 
         vector<vertex> floyd_warshall(int start_id, int end_id);

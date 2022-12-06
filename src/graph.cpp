@@ -115,6 +115,10 @@ void Graph::get_airport_ids() {
     }
 }
 
+vector<int> get_airport_ids() {
+    return airport_ids;
+}
+
 void Graph::get_adjacency_matrix() {
     for (size_t i = 0; i < adjacency_matrix.size(); i++) {
         for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {

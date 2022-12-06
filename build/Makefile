@@ -230,6 +230,30 @@ tests/data_project/test_data.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_data.cpp.s
 .PHONY : tests/data_project/test_data.cpp.s
 
+tests/data_project/test_graph.o: tests/data_project/test_graph.cpp.o
+.PHONY : tests/data_project/test_graph.o
+
+# target to build an object file
+tests/data_project/test_graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_graph.cpp.o
+.PHONY : tests/data_project/test_graph.cpp.o
+
+tests/data_project/test_graph.i: tests/data_project/test_graph.cpp.i
+.PHONY : tests/data_project/test_graph.i
+
+# target to preprocess a source file
+tests/data_project/test_graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_graph.cpp.i
+.PHONY : tests/data_project/test_graph.cpp.i
+
+tests/data_project/test_graph.s: tests/data_project/test_graph.cpp.s
+.PHONY : tests/data_project/test_graph.s
+
+# target to generate assembly for a file
+tests/data_project/test_graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/data_project/test_graph.cpp.s
+.PHONY : tests/data_project/test_graph.cpp.s
+
 tests/sb.o: tests/sb.cpp.o
 .PHONY : tests/sb.o
 
@@ -273,6 +297,9 @@ help:
 	@echo "... tests/data_project/test_data.o"
 	@echo "... tests/data_project/test_data.i"
 	@echo "... tests/data_project/test_data.s"
+	@echo "... tests/data_project/test_graph.o"
+	@echo "... tests/data_project/test_graph.i"
+	@echo "... tests/data_project/test_graph.s"
 	@echo "... tests/sb.o"
 	@echo "... tests/sb.i"
 	@echo "... tests/sb.s"

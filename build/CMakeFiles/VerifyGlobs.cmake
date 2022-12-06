@@ -49,6 +49,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS 225 - Final Project/yunheyue_final_project/tests/*.cpp")
 set(OLD_GLOB
   "/workspaces/CS 225 - Final Project/yunheyue_final_project/tests/data_project/test_data.cpp"
+  "/workspaces/CS 225 - Final Project/yunheyue_final_project/tests/data_project/test_graph.cpp"
   "/workspaces/CS 225 - Final Project/yunheyue_final_project/tests/sb.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
