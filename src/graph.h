@@ -43,7 +43,7 @@ class Graph {
         void get_adjacency_matrix();
         int get_edge_number();
 
-        void floyd_warshall();
+        vector<vertex> floyd_warshall(int start_id, int end_id);
         void shortest_Path_helper(int start_idx, int end_idx,vector<vertex>& path);
         vector<vertex> shortest_Path(int start_id, int end_id);
 
