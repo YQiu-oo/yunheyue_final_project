@@ -89,7 +89,15 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
     }
     edge_number = count_edge / 2;
 
+    routes.resize(routes_datas.size());
+    for (size_t i = 0; i < routes.size(); i++) {
+        routes[i].resize(2);
+    }
 
+    for (size_t i = 0; i < routes.size(); i++) {
+        routes[i][0] = stoi(routes_datas[i][0]);
+        routes[i][1] = stoi(routes_datas[i][1]);
+    }
 }
 
 int Graph::get_index(int id) {
@@ -119,7 +127,7 @@ vector<int> Graph::get_airport_ids() {
     return airport_ids;
 }
 
-void Graph::get_adjacency_matrix() {
+void Graph::print_adjacency_matrix() {
     for (size_t i = 0; i < adjacency_matrix.size(); i++) {
         for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
             cout << adjacency_matrix[i][j] << " ";
@@ -128,7 +136,26 @@ void Graph::get_adjacency_matrix() {
     }
 }
 
- vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
+Adjacency_Matrix Graph::get_adjacency_matrix() {
+    return adjacency_matrix;
+}
+
+
+void Graph::print_routes() {
+    for (size_t i = 0; i < routes.size(); i++) {
+        cout << routes[i][0] << ", " << routes[i][1] << endl;
+    }
+}
+
+
+vector<vector<int> > Graph::get_routes() {
+    return routes;
+}
+
+
+
+
+vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     All_distances all_distance;
     All_path all_path;
     all_distance.resize(vertex_number);

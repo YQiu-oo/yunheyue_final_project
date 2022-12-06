@@ -39,9 +39,16 @@ class Graph {
         void graph_connect();
         int get_index(int id); //Get the subscript of the specified id
         int get_vertex_number();
+
         void print_airport_ids();
-        void get_adjacency_matrix();
         vector<int> get_airport_ids();
+
+        void print_adjacency_matrix();
+        Adjacency_Matrix get_adjacency_matrix();
+
+        void print_routes();
+        vector<vector<int> > get_routes();
+
         int get_edge_number();
 
         vector<vertex> floyd_warshall(int start_id, int end_id);
@@ -60,6 +67,8 @@ class Graph {
         vector<int> airport_ids; //all airport id from airports.dat
         map<int, vertex> airports; //key is airport_id
         Adjacency_Matrix adjacency_matrix;
+        vector<vector<int>> routes;
+
         All_path all_path;//store all pair shortest path
         All_distances all_distance;// store all pair shortest distance 
         
