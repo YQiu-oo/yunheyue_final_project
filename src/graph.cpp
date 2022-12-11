@@ -119,42 +119,19 @@ int Graph::get_edge_number() {
     return edge_number;
 }
 
-void Graph::print_airport_ids() {
-    for (size_t i = 0; i < airport_ids.size(); i++) {
-        cout << airport_ids[i] << ", ";
-    }
-}
-
 vector<int> Graph::get_airport_ids() {
     return airport_ids;
 }
 
-void Graph::print_adjacency_matrix() {
-    for (size_t i = 0; i < adjacency_matrix.size(); i++) {
-        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-            cout << adjacency_matrix[i][j] << " ";
-        }  
-        cout << endl;
-    }
-}
 
 Adjacency_Matrix Graph::get_adjacency_matrix() {
     return adjacency_matrix;
 }
 
 
-void Graph::print_routes() {
-    for (size_t i = 0; i < routes.size(); i++) {
-        cout << routes[i][0] << ", " << routes[i][1] << endl;
-    }
-}
-
-
 vector<vector<int> > Graph::get_routes() {
     return routes;
 }
-
-
 
 
 vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {

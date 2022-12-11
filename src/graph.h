@@ -14,6 +14,9 @@ typedef vector<vector<int>> All_path;
 typedef vector<vector<int>> All_distances;
 
 struct vertex {
+    /*
+    Default constructor initialization
+    */
     vertex() {
         name = "";
         country = "";
@@ -22,14 +25,10 @@ struct vertex {
         longitude = 0.0;
         visited = false;
     }
-    
-    string name;
-    string city;
-    string country;
-    double latitude;
-    double longitude;
-    bool visited;
-
+    /*
+    Overloaded operators ==
+    Comparison Vertex
+    */
     bool operator==(const vertex& other) {
         if ((this -> name == other.name) and 
             (this -> city == other.city) and 
@@ -40,26 +39,102 @@ struct vertex {
         }
         return false;
     }
+    
+    /*
+    Airport name
+    */
+    string name;
+
+    /*
+    The city where the airport is located
+    */
+    string city;
+
+    /*
+    Country where the airport is located
+    */
+    string country;
+    
+    /*
+    The latitude of current airport
+    */
+    double latitude;
+
+    /*
+    The longitude of current airport
+    */
+    double longitude;
+
+    /*
+    Used to record if a vertex has been visited when traversing
+    */
+    bool visited;
+
+    /*
+    Each vertex has its own path to the current point.
+    Mainly use in bfs,store airport id
+    */
+    vector<int> path;
 
 };
 
 class Graph {
    public:
+        /*
+        Converting data into an undirected weighted graph in the constructor
+        */
         Graph(V2D airports_datas, V2D routes_datas);
-        void graph_connect();
-        int get_index(int id); //Get the subscript of the specified id
-        int get_vertex_number();
 
-        void print_airport_ids();
+        /*
+        Get the index of the specified id
+        */
+        int get_index(int id);
+
+        /*
+        Get the index of the specified airport
+        */
+        int get_index(string airport_name);
+
+        /*
+        Get the index of the specified airport (A city may have multiple airports)
+        */
+        vector<int> get_airports_index(string city);
+
+        /*
+        Get total vertex number of the graph
+        */
+        int get_vertex_number(); 
+
+        /*
+        Get total edge number of the graph
+        */
+        int get_edge_number();
+
+        /*
+        return airport_ids
+        */
         vector<int> get_airport_ids();
 
-        void print_adjacency_matrix();
+        /*
+        return adjacency_matrix
+        */
         Adjacency_Matrix get_adjacency_matrix();
 
-        void print_routes();
+        /*
+        return routes
+        */
         vector<vector<int> > get_routes();
 
-        int get_edge_number();
+        /*
+        return airport_names
+        */
+        vector<string> get_airport_names();
+
+        /*
+        return cities
+        */
+        vector<string> get_cities();
+
         /*
         Description: Given start_id and end_id, find all shortest_path of each airports and then return the shortest path
         between start_id and end_id along with airports.One thing important is this is for distance.
@@ -84,27 +159,46 @@ class Graph {
         */
         vector<vertex> bfs(int start_id, int end_id);
 
-
-        int get_index(string airport_name);
-        vector<int> get_airports_index(string city);
-
-        vector<string> get_airport_names();
-        vector<string> get_cities();
-
     private:
+        /*
+        total vertex number of graph
+        */
         int vertex_number;
+
+        /*
+        total edge number of graph
+        */
         int edge_number;
 
-        vector<int> airport_ids; //all airport id from airports.dat
-        map<int, vertex> airports; //key is airport_id
-        Adjacency_Matrix adjacency_matrix;
-        vector<vector<int>> routes;
+        /*
+        all airport id from airports.dat
+        */
+        vector<int> airport_ids;
 
-
-        vector<string> airport_names;
+        /*
+        all cities names from airports.dat
+        */
         vector<string> cities;
 
-       
-        
+        /*
+        all airport names from airports.dat
+        */
+        vector<string> airport_names;
+
+        /*
+        key is airport_id
+        velue is vertex (sush as airport name, city name, country, latitude, longitude)
+        */
+        map<int, vertex> airports;
+
+        /*
+        A two-dimensional vector to record the relationship between each airport
+        */
+        Adjacency_Matrix adjacency_matrix;
+
+        /*
+        The routes from routes.dat
+        */
+        vector<vector<int>> routes;        
 };
 
