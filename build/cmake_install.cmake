@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/final project/yunheyue_final_project-main/yunheyue_final_project
+# Install script for directory: /workspaces/yunheyue/yunheyue_final_project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib/cmake_install.cmake")
-  include("/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/src/cmake_install.cmake")
+  include("/workspaces/yunheyue/yunheyue_final_project/build/lib/cmake_install.cmake")
+  include("/workspaces/yunheyue/yunheyue_final_project/build/src/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/workspaces/yunheyue/yunheyue_final_project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

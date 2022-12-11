@@ -29,8 +29,18 @@ struct vertex {
     double latitude;
     double longitude;
     bool visited;
-    vector<int> path;//each vertex has its own path to the current point.
-                        //mainly use in bfs,store airport id
+
+    bool operator==(const vertex& other) {
+        if ((this -> name == other.name) and 
+            (this -> city == other.city) and 
+            (this -> country == other.country) and 
+            (this -> latitude == other.latitude) and 
+            (this -> longitude == other.longitude)) {
+            return true;
+        }
+        return false;
+    }
+
 };
 
 class Graph {
@@ -58,7 +68,14 @@ class Graph {
         void DFS ();
         void DFS_helper (int i);
         double haversine(double lat1, double lon1, double lat2, double lon2);
-        void bfs(int start_id, int end_id);
+        vector<vertex> bfs(int start_id, int end_id);
+
+
+        int get_index(string airport_name);
+        vector<int> get_airports_index(string city);
+
+        vector<string> get_airport_names();
+        vector<string> get_cities();
 
     private:
         int vertex_number;
@@ -68,6 +85,10 @@ class Graph {
         map<int, vertex> airports; //key is airport_id
         Adjacency_Matrix adjacency_matrix;
         vector<vector<int>> routes;
+
+
+        vector<string> airport_names;
+        vector<string> cities;
 
        
         

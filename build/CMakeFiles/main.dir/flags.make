@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib" -I"/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/src"
+CXX_INCLUDES = -I/workspaces/yunheyue/yunheyue_final_project/lib -I/workspaces/yunheyue/yunheyue_final_project/src
 
 CXX_FLAGS =  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17
 

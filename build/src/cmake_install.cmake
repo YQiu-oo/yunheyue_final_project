@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/src
+# Install script for directory: /workspaces/yunheyue/yunheyue_final_project/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

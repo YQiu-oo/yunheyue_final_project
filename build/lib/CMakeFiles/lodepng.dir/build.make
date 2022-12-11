@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project"
+CMAKE_SOURCE_DIR = /workspaces/yunheyue/yunheyue_final_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build"
+CMAKE_BINARY_DIR = /workspaces/yunheyue/yunheyue_final_project/build
 
 # Include any dependencies generated for this target.
 include lib/CMakeFiles/lodepng.dir/depend.make
@@ -72,16 +72,16 @@ include lib/CMakeFiles/lodepng.dir/flags.make
 lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o: lib/CMakeFiles/lodepng.dir/flags.make
 lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o: ../lib/lodepng/lodepng.cpp
 lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o: lib/CMakeFiles/lodepng.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o"
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -MF CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o.d -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib/lodepng/lodepng.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/yunheyue/yunheyue_final_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o"
+	cd /workspaces/yunheyue/yunheyue_final_project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -MF CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o.d -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspaces/yunheyue/yunheyue_final_project/lib/lodepng/lodepng.cpp
 
 lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.i"
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib/lodepng/lodepng.cpp" > CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.i
+	cd /workspaces/yunheyue/yunheyue_final_project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/yunheyue/yunheyue_final_project/lib/lodepng/lodepng.cpp > CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.i
 
 lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.s"
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib/lodepng/lodepng.cpp" -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.s
+	cd /workspaces/yunheyue/yunheyue_final_project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/yunheyue/yunheyue_final_project/lib/lodepng/lodepng.cpp -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.s
 
 # Object files for target lodepng
 lodepng_OBJECTS = \
@@ -93,19 +93,19 @@ lodepng_EXTERNAL_OBJECTS =
 lib/liblodepng.a: lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o
 lib/liblodepng.a: lib/CMakeFiles/lodepng.dir/build.make
 lib/liblodepng.a: lib/CMakeFiles/lodepng.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library liblodepng.a"
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" && $(CMAKE_COMMAND) -P CMakeFiles/lodepng.dir/cmake_clean_target.cmake
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lodepng.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/yunheyue/yunheyue_final_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library liblodepng.a"
+	cd /workspaces/yunheyue/yunheyue_final_project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/lodepng.dir/cmake_clean_target.cmake
+	cd /workspaces/yunheyue/yunheyue_final_project/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lodepng.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/CMakeFiles/lodepng.dir/build: lib/liblodepng.a
 .PHONY : lib/CMakeFiles/lodepng.dir/build
 
 lib/CMakeFiles/lodepng.dir/clean:
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" && $(CMAKE_COMMAND) -P CMakeFiles/lodepng.dir/cmake_clean.cmake
+	cd /workspaces/yunheyue/yunheyue_final_project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/lodepng.dir/cmake_clean.cmake
 .PHONY : lib/CMakeFiles/lodepng.dir/clean
 
 lib/CMakeFiles/lodepng.dir/depend:
-	cd "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project" "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/lib" "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build" "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib" "/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /workspaces/yunheyue/yunheyue_final_project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/yunheyue/yunheyue_final_project /workspaces/yunheyue/yunheyue_final_project/lib /workspaces/yunheyue/yunheyue_final_project/build /workspaces/yunheyue/yunheyue_final_project/build/lib /workspaces/yunheyue/yunheyue_final_project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/CMakeFiles/lodepng.dir/depend
 

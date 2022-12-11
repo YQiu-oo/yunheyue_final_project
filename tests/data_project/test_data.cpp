@@ -7,6 +7,7 @@
 #include <set>
 #include "read_file.h"
 #include "graph.h"
+#include "draw.h"
 
 TEST_CASE("read_route_file Test1", "[weight=5]"){
     V2D routes = read_routes("../tests/data_project/routes_small1.dat");
@@ -75,8 +76,8 @@ Example:
 
 */
 TEST_CASE("Matrix Test1", "[weight=5]"){
-    V2D airports = read_airports("/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/tests/data_project/airport1.dat");
-    V2D routes = read_routes("/workspaces/final project/yunheyue_final_project-main/yunheyue_final_project/tests/data_project/route1.dat");
+    V2D airports = read_airports("/workspaces/yunheyue/yunheyue_final_project/tests/data_project/airport1.dat");
+    V2D routes = read_routes("/workspaces/yunheyue/yunheyue_final_project/tests/data_project/route1.dat");
 
     Graph graph(airports, routes);
     Adjacency_Matrix realoutput = graph.get_adjacency_matrix();
@@ -86,5 +87,18 @@ TEST_CASE("Matrix Test1", "[weight=5]"){
                                              {0,0,0,0,1},\
                                              {1,0,1,0,0}};
     vector<vertex> my_ = graph.floyd_warshall(4, 3);
+    // vector<vertex> sb = graph.bfs(3, 4);
+    for(unsigned int i  = 0; i < my_.size(); i++) {
+        cout << my_[i].city << endl;
+
+    }
+    Draw dd("/workspaces/yunheyue/yunheyue_final_project/worldmap2.png");
+    dd.drawtheline(my_);
+
+    PNG* p = dd.getPng();
+  
+    p->writeToFile("sbjjy.png");
+    
+
     REQUIRE(realoutput == correct_matrix);
 }

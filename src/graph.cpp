@@ -30,7 +30,9 @@ Graph::Graph(V2D airports_datas, V2D routes_datas) {
     for (size_t i = 0; i < airports_datas.size(); i++) {
         vertex vertex;
         vertex.name = airports_datas[i][1];
+        airport_names.push_back(airports_datas[i][1]);
         vertex.city = airports_datas[i][2];
+        cities.push_back(airports_datas[i][2]);
         vertex.country = airports_datas[i][3];
         vertex.latitude = stod(airports_datas[i][4]);
         vertex.longitude = stod(airports_datas[i][5]);
@@ -186,9 +188,6 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
         }
     }
   
-
-   
-
     
     int num_of_vertex = get_vertex_number();
     for(int k = 0; k < num_of_vertex; k++ ) {
@@ -210,32 +209,32 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     if(start_idx == end_idx) {
         return path;
     }
-    for (size_t i = 0; i < adjacency_matrix.size(); i++) {
-        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-            cout << all_path[i][j] << " ";
-        }  
-        cout << endl;
-    }
+    // for (size_t i = 0; i < adjacency_matrix.size(); i++) {
+    //     for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
+    //         cout << all_distance[i][j] << " ";
+    //     }  
+    //     cout << endl;
+    // }
 
     vertex v = airports[start_id];
-    cout << v.city << endl;
-    cout << v.city << endl;
+    // cout << v.city << endl;
+    // cout << v.city << endl;
 
     path.push_back(v);
 
     while(start_idx != end_idx) {
         
         start_idx = all_path[start_idx][end_idx] ;
-        cout << start_idx << 1222<< endl;
+        // cout << start_idx << 1222<< endl;
         path.push_back(airports[airport_ids[start_idx]]);
     }
-    for(unsigned int i= 0; i < path.size();i++) {
-        cout << path[i].city << endl;
+    // for(unsigned int i= 0; i < path.size();i++) {
+    //     cout << path[i].city << endl;
 
-    }
+    // }
 
 
-
+    
    return path;
  }
  
@@ -258,37 +257,80 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
 // }
 
 
-void Graph::bfs(int start_id, int end_id){
+vector<vertex> Graph::bfs(int start_id, int end_id){
 
     vector<int> visited;
     queue<int> q;
    
+   
     q.push(start_id);
     visited.push_back(start_id);
-    airports[start_id].path.push_back(start_id);
+    std::map<int, int> parent;
+    
 
     while(!q.empty()) {
         int now = q.front();
         q.pop();
         if(now == end_id) {
             //now is the endpoint
-            return;
+            break;
         }
-        int idx = get_index(now);
+        
         for(int i = 0; i < vertex_number; i++) {
-            if(adjacency_matrix[idx][i] == true) {
+            if(adjacency_matrix[get_index(now)][i]) {
                 if(find(visited.begin(), visited.end(), airport_ids[i]) == visited.end()) {
                     q.push(airport_ids[i]);
                     visited.push_back(airport_ids[i]);
-                    for(size_t k = 0; k < airports[now].path.size(); k++) {
-                        airports[airport_ids[i]].path.push_back(airports[now].path[k]);
-
-                    }
-                    airports[airport_ids[i]].path.push_back(airport_ids[i]);
+                    parent[airport_ids[i]] = now;
                 }
-
             }
 
         }
     }
+    // for(auto& a : parent) {
+    //     cout << a.first << "    " << a.second << endl; 
+
+    // }
+    
+std::vector<vertex> path;
+  int current = end_id;
+  while (current != start_id) {
+    path.push_back(airports[current]);
+    current = parent[current];
+  }
+  path.push_back(airports[start_id]);
+
+  // reverse the path to get the correct order
+  std::reverse(path.begin(), path.end());
+
+  return path;
+}
+
+
+vector<string> Graph::get_airport_names() {
+    return airport_names;
+}
+
+vector<string> Graph::get_cities() {
+    return cities;
+}
+
+
+int Graph::get_index(string airport_name) {
+    for (size_t i = 0; i < airport_names.size(); i++) {
+        if (airport_names[i] == airport_name) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+vector<int> Graph::get_airports_index(string city) {
+    vector<int> temp;
+    for (size_t i = 0; i < cities.size(); i++) {
+        if (cities[i] == city) {
+            temp.push_back(i);
+        }
+    }
+    return temp;
 }
