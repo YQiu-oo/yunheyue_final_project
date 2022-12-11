@@ -76,8 +76,8 @@ Example:
 
 */
 TEST_CASE("Matrix Test1", "[weight=5]"){
-    V2D airports = read_airports("/workspaces/yunheyue/yunheyue_final_project/tests/data_project/airport1.dat");
-    V2D routes = read_routes("/workspaces/yunheyue/yunheyue_final_project/tests/data_project/route1.dat");
+    V2D airports = read_airports("/workspaces/final project/yunheyue_final_project/tests/data_project/airport1.dat");
+    V2D routes = read_routes("/workspaces/final project/yunheyue_final_project/tests/data_project/route1.dat");
 
     Graph graph(airports, routes);
     Adjacency_Matrix realoutput = graph.get_adjacency_matrix();
@@ -92,7 +92,7 @@ TEST_CASE("Matrix Test1", "[weight=5]"){
         cout << my_[i].city << endl;
 
     }
-    Draw dd("/workspaces/yunheyue/yunheyue_final_project/worldmap2.png");
+    Draw dd("/workspaces/final project/yunheyue_final_project/worldmap3.png");
     dd.drawtheline(my_);
 
     PNG* p = dd.getPng();

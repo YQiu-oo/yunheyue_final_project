@@ -54,7 +54,7 @@ int main()
     // for (auto i : graph.airports) {
     //     cout << i.second.latitude << "," << i.second.longitude << endl;
     // }
-    Draw d("/workspaces/yunheyue/yunheyue_final_project/worldmap2.png");
+    Draw d("/workspaces/final project/yunheyue_final_project/worldmap2.png");
     cout << "Welocme to OpenFlight!!" << endl;
     cout << "Below is the instrution of how to use this system!" << endl;
     cout << "1.shortest distance" << endl;
@@ -100,7 +100,7 @@ int main()
             for (unsigned int i = 0; i < airports_user_input.size(); i++)
             {
                 cout << i << "."
-                     << " Airports ID:  " << ids[i] << "Airport's Name:  " << airports_user_input[i] << endl;
+                     << " Airports ID:  " << ids[i] << "  Airport's Name:  " << airports_user_input[i] << endl;
             }
             int i;
             cout << "Please chose the number of your prefer source airport: ";
@@ -146,7 +146,7 @@ int main()
             for (unsigned int i = 0; i < airports_user_input2.size(); i++)
             {
                 cout << i << "."
-                     << " Airports ID:  " << ids2[i] << "Airport's Name:  " << airports_user_input2[i] << endl;
+                     << " Airports ID:  " << ids2[i] << "  Airport's Name:  " << airports_user_input2[i] << endl;
             }
             int j;
             cout << "Please chose the number of your prefer destination airport: ";
@@ -174,7 +174,9 @@ int main()
                 cout << endl;
                 cout << "Loading route on the world map................" << endl;
                 d.drawtheline(draw_path);
-
+                PNG* p = d.getPng();
+  
+                 p->writeToFile("sbjjy.png");
                 cout << "Drawing done, have a nice trip ^_^" << endl;
             }
             else
@@ -212,7 +214,7 @@ int main()
             for (unsigned int i = 0; i < airports_user_input.size(); i++)
             {
                 cout << i << "."
-                     << " Airports ID:  " << ids[i] << "Airport's Name:  " << airports_user_input[i] << endl;
+                     << " Airports ID:  " << ids[i] << "  Airport's Name:  " << airports_user_input[i] << endl;
             }
             int i;
             cout << "Please chose the number of your prefer source airport: ";
@@ -249,7 +251,7 @@ int main()
             for (unsigned int i = 0; i < airports_user_input2.size(); i++)
             {
                 cout << i << "."
-                     << " Airports ID:  " << ids2[i] << "Airport's Name:  " << airports_user_input2[i] << endl;
+                     << " Airports ID:  " << ids2[i] << "  Airport's Name:  " << airports_user_input2[i] << endl;
             }
             int j;
             cout << "Please chose the number of your prefer destination airport: ";
@@ -277,7 +279,9 @@ int main()
                 cout << endl;
                 cout << "Loading route on the world map................" << endl;
                 d.drawtheline(draw_path);
-
+                PNG* p = d.getPng();
+  
+                 p->writeToFile("sbjjy.png");
                 cout << "Drawing done, have a nice trip ^_^" << endl;
             }
             else

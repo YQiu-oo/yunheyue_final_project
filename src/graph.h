@@ -60,14 +60,28 @@ class Graph {
         vector<vector<int> > get_routes();
 
         int get_edge_number();
-
+        /*
+        Description: Given start_id and end_id, find all shortest_path of each airports and then return the shortest path
+        between start_id and end_id along with airports.One thing important is this is for distance.
+        Parameters: int start_id and int end_id, we will convert them into vertex(airport).
+        Return value: return a vector that stores each airports along with the shortest path between start_id and end_id.
+        */
         vector<vertex> floyd_warshall(int start_id, int end_id);
-        void shortest_Path_helper(int start_idx, int end_idx,vector<vertex>& path);
-        vector<vertex> shortest_Path(int start_id, int end_id);
+        // void shortest_Path_helper(int start_idx, int end_idx,vector<vertex>& path);
+        // vector<vertex> shortest_Path(int start_id, int end_id);
 
-        void DFS ();
-        void DFS_helper (int i);
+        /*
+        Description: To calculate the distance between two airports with their latitude and longtitude.
+        Parameters: The lat1 and lon1 of the start airport and the lat2 and lon2 of the end airport.
+        Return value: return a double value that is the distance between two airports.
+        */
         double haversine(double lat1, double lon1, double lat2, double lon2);
+
+        /*
+        Description: Find a route given start_id and end_id that has the least stops.
+        Parameters: int start_id and int end_id, we will convert them into vertex(airport).
+        Return value: return a vector that stores each airports along with the shortest path between start_id and end_id.
+        */
         vector<vertex> bfs(int start_id, int end_id);
 
 

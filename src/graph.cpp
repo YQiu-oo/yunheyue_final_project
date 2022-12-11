@@ -158,18 +158,22 @@ vector<vector<int> > Graph::get_routes() {
 
 
 vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
-    All_distances all_distance;
-    All_path all_path;
+    All_distances all_distance;//store distance from one airport to another airport
+    All_path all_path;//store the path from one airport to another airport
     all_distance.resize(vertex_number);
     all_path.resize(vertex_number);
-
+    
     for (int i = 0; i < vertex_number; i++) {
         all_distance[i].resize(vertex_number);
         all_path[i].resize(vertex_number);
 
     }
+    //initialize all_path and all_distance with the haversine function and adjacency_matrix,
+    //if two airports have connection , then intializes all_distance with the distance and all_path with the index
+    //of the current traverse index. Otherwise, INF and -1.
     for (size_t i = 0; i < adjacency_matrix.size(); i++) { 
         for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
+            
             if(i == j) { 
                 all_distance[i][j] = 0;
                 all_path[i][j] = -1;
@@ -188,20 +192,27 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
         }
     }
   
-    
+    //The core stuff of the Floyd_warshall algorithm: update the value in all_path and all_distance
     int num_of_vertex = get_vertex_number();
     for(int k = 0; k < num_of_vertex; k++ ) {
         for(int i = 0; i <  num_of_vertex; i++) {
-            for(int j = 0; j < num_of_vertex; j++) {
+            if(all_distance[i][k] != INF) {
+                for(int j = 0; j < i; j++) {
+                    //the shortest path between j and j with k as the transfer point: i -> k -> j
                 if(all_distance[i][k] + all_distance[k][j] < all_distance[i][j]) {
                     all_distance[i][j] = all_distance[i][k] + all_distance[k][j];
                     all_path[i][j] = all_path[i][k];
                 }
             }
+            }
+            
         }
     }
-
     
+   /*
+    Now we have correct path and given the start_id and end_id, find the shortest path 
+    in all_path.
+   */
     vector<vertex> path;
     int start_idx = get_index(start_id);
     int end_idx = get_index(end_id);
@@ -215,17 +226,11 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     //     }  
     //     cout << endl;
     // }
-
     vertex v = airports[start_id];
-    // cout << v.city << endl;
-    // cout << v.city << endl;
-
     path.push_back(v);
-
     while(start_idx != end_idx) {
         
         start_idx = all_path[start_idx][end_idx] ;
-        // cout << start_idx << 1222<< endl;
         path.push_back(airports[airport_ids[start_idx]]);
     }
     // for(unsigned int i= 0; i < path.size();i++) {
@@ -267,7 +272,9 @@ vector<vertex> Graph::bfs(int start_id, int end_id){
     visited.push_back(start_id);
     std::map<int, int> parent;
     
-
+    /*
+    BFS to traverse all points and record each points 
+    */
     while(!q.empty()) {
         int now = q.front();
         q.pop();
@@ -275,7 +282,8 @@ vector<vertex> Graph::bfs(int start_id, int end_id){
             //now is the endpoint
             break;
         }
-        
+        //To check all neighbors of the "now" vertex, if it has not visited yet, we mark it as visited and store the parent(now) 
+        // of current neighbor
         for(int i = 0; i < vertex_number; i++) {
             if(adjacency_matrix[get_index(now)][i]) {
                 if(find(visited.begin(), visited.end(), airport_ids[i]) == visited.end()) {
@@ -287,18 +295,19 @@ vector<vertex> Graph::bfs(int start_id, int end_id){
 
         }
     }
-    // for(auto& a : parent) {
-    //     cout << a.first << "    " << a.second << endl; 
-
-    // }
-    
-std::vector<vertex> path;
-  int current = end_id;
+   
+    /*
+    Find the route from the end point and push each point to the vector called path,
+    stop until we meet the start point
+    */
+    std::vector<vertex> path;
+    int current = end_id;
   while (current != start_id) {
     path.push_back(airports[current]);
     current = parent[current];
   }
   path.push_back(airports[start_id]);
+
 
   // reverse the path to get the correct order
   std::reverse(path.begin(), path.end());

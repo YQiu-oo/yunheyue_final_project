@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
-#include "/workspaces/yunheyue/yunheyue_final_project/lib/cs225/PNG.h"
+#include "/workspaces/final project/yunheyue_final_project/lib/cs225/PNG.h"
 #include "graph.h"
 
 using namespace std;
@@ -12,20 +12,26 @@ class Draw
 {
     private:
         PNG* png;
+        //wide of our worldmap in pixel which is 2000
+        int map_width = 1196;
+        //height of our worldmap in pixel which is 1000
+        int map_height = 690; 
 
-        int map_width = 2000;
-        int map_height = 1000; 
-
-        //These are pixel parameters, because equator wasn't exactly middle and prime meridian were also not.
-        //If not using empty_map.png this needs to be recalibrated along with map_width and map_height
-        // int PRIME_MERIDIAN = 2000/2 - 2000/28; //This was done by trial and error 
-        // int LEFT_SIDE_LONG = -167; 
-        // int EQUATOR = 337;
 
     public:
+        //convert latitude and longtitude of airport to index in our worldmap.
         pair<int,int> converttoindex(double latitude, double longitude);
+        //draw the line connect each airport
         void drawtheline(vector<vertex> v);
+        /*
+        Description: constructor to intialize png with the input_file
+        parameters: the path of the png
+        */
         Draw(const string input_file);
+        /*
+        Description: return the png
+        return value: PNG*
+        */
         PNG* getPng();
         ~Draw();
 };
