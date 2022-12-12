@@ -197,12 +197,18 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     if(start_idx == end_idx) {
         return path;
     }
-    // for (size_t i = 0; i < adjacency_matrix.size(); i++) {
-    //     for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-    //         cout << all_distance[i][j] << " ";
-    //     }  
-    //     cout << endl;
-    // }
+    for (size_t i = 0; i < adjacency_matrix.size(); i++) {
+        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
+            cout << all_distance[i][j] << " ";
+        }  
+        cout << endl;
+    }
+     for (size_t i = 0; i < adjacency_matrix.size(); i++) {
+        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
+            cout << all_path[i][j] << " ";
+        }  
+        cout << endl;
+    }
     vertex v = airports[start_id];
     path.push_back(v);
     while(start_idx != end_idx) {

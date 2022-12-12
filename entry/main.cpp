@@ -5,9 +5,15 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
-    V2D airports = read_airports("../tests/data_project/airports.dat");
+    if (argc != 3) {
+        std::cerr << "Please input three arguments: ./main [your airports file location] [your routes file location]" << std::endl;
+        return 1;
+    }
+    
+    //"../data/data_project/airports.dat"
+    V2D airports = read_airports(argv[1]);
     // for (size_t i = 0; i < airports.size(); i++) {
     //     for (size_t j = 0; j < airports[i].size(); j++) {
     //         cout << airports[i][j] << ", ";
@@ -27,7 +33,8 @@ int main()
     //     cout << endl;
     // }
 
-    V2D routes = read_routes("../tests/data_project/routes.dat");
+    //"../data/data_project/routes.dat"
+    V2D routes = read_routes(argv[2]);
     // for (size_t i = 0; i < routes.size(); i++) {
     //     cout << routes[i][0] << "," << routes[i][1] << endl;
     // }
@@ -54,7 +61,7 @@ int main()
     // for (auto i : graph.airports) {
     //     cout << i.second.latitude << "," << i.second.longitude << endl;
     // }
-    Draw d("/workspaces/final project/yunheyue_final_project/worldmap2.png");
+    Draw d("../data/data_project/worldmap3.png");
     cout << "Welocme to OpenFlight!!" << endl;
     cout << "Below is the instrution of how to use this system!" << endl;
     cout << "1.shortest distance" << endl;
@@ -109,11 +116,6 @@ int main()
             string des_city;
             cout << "Please enter the city of your destination airport:  ";
             cin >> des_city;
-            // return all aiports and airport ids in this city
-            //  vector<pair<int, vertex>> airport2 = de(des_city);
-            //  for(unsigned int i  = 0; i < airport2.size(); i++) {
-            //      cout << i << "." << " Airports ID:  " << airport2[i].first << "Airport's Name:  " << airport2[i].second.name << endl;
-            //  }
 
             vector<int> airports_index2 = graph.get_airports_index(des_city);
             cout << airports_index2.size() << "1" << endl;
@@ -176,7 +178,7 @@ int main()
                 d.drawtheline(draw_path);
                 PNG* p = d.getPng();
   
-                 p->writeToFile("sbjjy.png");
+                 p->writeToFile("../result/out.png");
                 cout << "Drawing done, have a nice trip ^_^" << endl;
             }
             else
@@ -223,11 +225,6 @@ int main()
             string des_city;
             cout << "Please enter the city of your destination airport:  ";
             cin >> des_city;
-            // return all aiports and airport ids in this city
-            //  vector<pair<int, vertex>> airport2 = de(des_city);
-            //  for(unsigned int i  = 0; i < airport2.size(); i++) {
-            //      cout << i << "." << " Airports ID:  " << airport2[i].first << "Airport's Name:  " << airport2[i].second.name << endl;
-            //  }
 
             vector<int> airports_index2 = graph.get_airports_index(des_city);
 
@@ -281,7 +278,7 @@ int main()
                 d.drawtheline(draw_path);
                 PNG* p = d.getPng();
   
-                 p->writeToFile("sbjjy.png");
+                 p->writeToFile("../result/out.png");
                 cout << "Drawing done, have a nice trip ^_^" << endl;
             }
             else

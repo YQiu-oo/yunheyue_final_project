@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
-#include "/workspaces/final project/yunheyue_final_project/lib/cs225/PNG.h"
+#include "../lib/cs225/PNG.h"
 #include "graph.h"
 
 using namespace std;

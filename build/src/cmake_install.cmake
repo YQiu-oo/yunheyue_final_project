@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/CS 225 - Final Project/yunheyue_final_project/src
+# Install script for directory: /workspaces/yunheyue/yunheyue_final_project/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
