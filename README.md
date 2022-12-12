@@ -79,6 +79,7 @@ make test
 
 
 # Project Demo
+First make main, and use ./main first.dat second.dat to input the data set you want.
 ![f539f2e6ea48665d0d33cbbc61193e1](https://user-images.githubusercontent.com/92742463/207180203-22708d73-4417-495b-9d5d-21658a0f50a9.png)
 ![3bd610cc4711c72de34c50ef043d7a8](https://user-images.githubusercontent.com/92742463/207180235-c43bcf58-45ff-40dd-9e26-5aa0ef759dbc.png)
 ![436b623c20a0eaa9b8b06036b88d7ce](https://user-images.githubusercontent.com/75405352/207177186-92965a48-f107-4b1b-9fc8-d26419779692.png)
