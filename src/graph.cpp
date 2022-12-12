@@ -173,15 +173,20 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     int num_of_vertex = get_vertex_number();
     for(int k = 0; k < num_of_vertex; k++ ) {
         for(int i = 0; i <  num_of_vertex; i++) {
-            if(all_distance[i][k] != INF) {
-                for(int j = 0; j < i; j++) {
+            if(k != i) {
+                int t = (k < i) ? all_distance[i][k] : all_distance[k][i];
+                if (t == INF) continue;
+                for(int j = 0; j <= i; j++) {
                     //the shortest path between j and j with k as the transfer point: i -> k -> j
                 if(all_distance[i][k] + all_distance[k][j] < all_distance[i][j]) {
                     all_distance[i][j] = all_distance[i][k] + all_distance[k][j];
                     all_path[i][j] = all_path[i][k];
                 }
             }
+            
+
             }
+            
             
         }
     }

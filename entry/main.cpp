@@ -64,9 +64,9 @@ int main(int argc, char** argv)
     Draw d("../data/data_project/worldmap3.png");
     cout << "Welocme to OpenFlight!!" << endl;
     cout << "Below is the instrution of how to use this system!" << endl;
-    cout << "1.shortest distance" << endl;
-    cout << "2.Least stops" << endl;
-    cout << "0.exit" << endl;
+    cout << "Press 1 to find shortest distance" << endl;
+    cout << "Press 2 to find Least stops" << endl;
+    cout << "Press 0 to exit the system" << endl;
 
     bool flag = true;
     while (flag)
@@ -118,7 +118,7 @@ int main(int argc, char** argv)
             cin >> des_city;
 
             vector<int> airports_index2 = graph.get_airports_index(des_city);
-            cout << airports_index2.size() << "1" << endl;
+            
 
             vector<string> airports_user_input2;
             for (size_t i = 0; i < airports_index2.size(); i++)
@@ -126,7 +126,6 @@ int main(int argc, char** argv)
                 airports_user_input2.push_back(graph.get_airport_names()[airports_index2[i]]);
 
             }
-                        cout << airports_user_input2.size() << "2" << endl;
 
 
             vector<int> airports_user_input_index2;
@@ -135,15 +134,11 @@ int main(int argc, char** argv)
                 airports_user_input_index2.push_back(graph.get_index(airports_user_input2[i]));
             }
 
-                                    cout << airports_user_input_index2.size() << "3" << endl;
-
             vector<int> ids2;
             for (size_t i = 0; i < airports_user_input_index2.size(); i++)
             {
                 ids2.push_back(graph.get_airport_ids()[airports_user_input_index2[i]]);
             }
-
-            cout << ids2.size() << "4" << endl;
 
             for (unsigned int i = 0; i < airports_user_input2.size(); i++)
             {
@@ -242,7 +237,7 @@ int main(int argc, char** argv)
             vector<int> ids2;
             for (size_t i = 0; i < airports_user_input_index2.size(); i++)
             {
-                ids.push_back(graph.get_airport_ids()[airports_user_input_index2[i]]);
+                ids2.push_back(graph.get_airport_ids()[airports_user_input_index2[i]]);
             }
 
             for (unsigned int i = 0; i < airports_user_input2.size(); i++)
