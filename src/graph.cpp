@@ -170,22 +170,25 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     }
   
     //The core stuff of the Floyd_warshall algorithm: update the value in all_path and all_distance
+    //The shortest path between j and j with k as the transfer point: i -> k -> j
     int num_of_vertex = get_vertex_number();
     for(int k = 0; k < num_of_vertex; k++ ) {
         for(int i = 0; i <  num_of_vertex; i++) {
-            if(k != i) {
-                int t = (k < i) ? all_distance[i][k] : all_distance[k][i];
-                if (t == INF) continue;
-                for(int j = 0; j <= i; j++) {
-                    //the shortest path between j and j with k as the transfer point: i -> k -> j
-                if(all_distance[i][k] + all_distance[k][j] < all_distance[i][j]) {
-                    all_distance[i][j] = all_distance[i][k] + all_distance[k][j];
-                    all_path[i][j] = all_path[i][k];
-                }
+            if(all_distance[i][k] != INF) {
+                 for(int j = 0; j < num_of_vertex; j++) {
+                    if(all_distance[k][j] != INF) {
+                        if(all_distance[i][j] == INF || all_distance[i][k] + all_distance[k][j] < all_distance[i][j]) {
+                            all_distance[i][j] = all_distance[i][k] + all_distance[k][j];
+                            all_path[i][j] = all_path[i][k];
+                         }
+
+
+                    }
+                 }   
             }
             
 
-            }
+            
             
             
         }
@@ -198,22 +201,11 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
     vector<vertex> path;
     int start_idx = get_index(start_id);
     int end_idx = get_index(end_id);
-    cout << start_idx << "   " << end_idx << endl;
+   
     if(start_idx == end_idx) {
         return path;
     }
-    for (size_t i = 0; i < adjacency_matrix.size(); i++) {
-        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-            cout << all_distance[i][j] << " ";
-        }  
-        cout << endl;
-    }
-     for (size_t i = 0; i < adjacency_matrix.size(); i++) {
-        for (size_t j = 0; j < adjacency_matrix[i].size(); j++) {
-            cout << all_path[i][j] << " ";
-        }  
-        cout << endl;
-    }
+    
     vertex v = airports[start_id];
     path.push_back(v);
     while(start_idx != end_idx) {

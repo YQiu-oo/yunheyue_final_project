@@ -61,38 +61,35 @@ void Draw::drawtheline(vector<vertex> v)
             {
                 swap(index1, index2);
             }
-            // draw the airport, color 4 pixel around the airport
-            png->getPixel(index1.first, index1.second).h = 150;
-            png->getPixel(index1.first, index1.second).s = 1;
-            png->getPixel(index1.first, index1.second).l = 0.5;
-            png->getPixel(index1.first + 1, index1.second).h = 150;
-            png->getPixel(index1.first + 1, index1.second).s = 1;
-            png->getPixel(index1.first + 1, index1.second).l = 0.5;
-            png->getPixel(index1.first - 1, index1.second).h = 150;
-            png->getPixel(index1.first - 1, index1.second).s = 1;
-            png->getPixel(index1.first - 1, index1.second).l = 0.5;
-            png->getPixel(index1.first, index1.second + 1).h = 150;
-            png->getPixel(index1.first, index1.second + 1).s = 1;
-            png->getPixel(index1.first, index1.second + 1).l = 0.5;
-            png->getPixel(index1.first, index1.second - 1).h = 150;
-            png->getPixel(index1.first, index1.second - 1).s = 1;
-            png->getPixel(index1.first, index1.second - 1).l = 0.5;
-            // //draw the second airport, color 4 pixel around the airport
-            png->getPixel(index2.first, index2.second).h = 150;
-            png->getPixel(index2.first, index2.second).s = 1;
-            png->getPixel(index2.first, index2.second).l = 0.5;
-            png->getPixel(index2.first + 1, index2.second).h = 150;
-            png->getPixel(index2.first + 1, index2.second).s = 1;
-            png->getPixel(index2.first + 1, index2.second).l = 0.5;
-            png->getPixel(index2.first - 1, index2.second).h = 150;
-            png->getPixel(index2.first - 1, index2.second).s = 1;
-            png->getPixel(index2.first - 1, index2.second).l = 0.5;
-            png->getPixel(index2.first, index2.second + 1).h = 150;
-            png->getPixel(index2.first, index2.second + 1).s = 1;
-            png->getPixel(index2.first, index2.second + 1).l = 0.5;
-            png->getPixel(index2.first, index2.second - 1).h = 150;
-            png->getPixel(index2.first, index2.second - 1).s = 1;
-            png->getPixel(index2.first, index2.second - 1).l = 0.5;
+            // draw the airport, color 25 pixel around the airport
+            for (int i = 0; i <= 5; i++)
+            {
+                png->getPixel(index1.first + i, index1.second).h = 150;
+                png->getPixel(index1.first + i, index1.second).s = 1;
+                png->getPixel(index1.first + i, index1.second).l = 0.5;
+                png->getPixel(index1.first - i, index1.second).h = 150;
+                png->getPixel(index1.first - i, index1.second).s = 1;
+                png->getPixel(index1.first - i, index1.second).l = 0.5;
+                png->getPixel(index1.first, index1.second + i).h = 150;
+                png->getPixel(index1.first, index1.second + i).s = 1;
+                png->getPixel(index1.first, index1.second + i).l = 0.5;
+                png->getPixel(index1.first, index1.second - i).h = 150;
+                png->getPixel(index1.first, index1.second - i).s = 1;
+                png->getPixel(index1.first, index1.second - i).l = 0.5;
+
+                png->getPixel(index2.first + i, index2.second).h = 150;
+                png->getPixel(index2.first + i, index2.second).s = 1;
+                png->getPixel(index2.first + i, index2.second).l = 0.5;
+                png->getPixel(index2.first - i, index2.second).h = 150;
+                png->getPixel(index2.first - i, index2.second).s = 1;
+                png->getPixel(index2.first - i, index2.second).l = 0.5;
+                png->getPixel(index2.first, index2.second + i).h = 150;
+                png->getPixel(index2.first, index2.second + i).s = 1;
+                png->getPixel(index2.first, index2.second + i).l = 0.5;
+                png->getPixel(index2.first, index2.second - i).h = 150;
+                png->getPixel(index2.first, index2.second - i).s = 1;
+                png->getPixel(index2.first, index2.second - i).l = 0.5;
+            }
             // use dy/dx formula to get slope of line that connect two airport
             double slope = (double)(index2.second - index1.second) / (index2.first - index1.first);
             // use c = y - slope*x to get the value of constant
@@ -107,6 +104,8 @@ void Draw::drawtheline(vector<vertex> v)
                 png->getPixel(x, y).s = 1;
                 png->getPixel(x, y).l = 0.5;
             }
+            //Since the line drawing are from small coordinate to large, so it is important to reverse the index
+            //when first index is larger than second.
             if (index1.second > index2.second)
             {
                 swap(index1, index2);
