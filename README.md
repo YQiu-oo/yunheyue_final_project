@@ -23,8 +23,22 @@
 |--result (store the output(result) )
 |--README.md (running instructions and program organization)
 |--result.md (written report)
+
+```
+# Instructions of how to run this program
+
+### Download project to your local with git clone command:
+```
+git clone https://github.com/YQiu-oo/yunheyue_final_project.git
+```
+### Make a build directory and let the cmake command workable before running program 
+```
+mkdir build
+cd build
 cmake ..
 ```
+
+
 ### Excute the program
 execute the program with make first or make main, then there are two required arguments for user to input:
 ** Notice **
