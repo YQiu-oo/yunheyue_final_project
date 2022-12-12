@@ -1,3 +1,53 @@
+# yunheyue_final_project
+
+<img src="https://user-images.githubusercontent.com/86536290/206965520-c34a9a50-580b-44f2-b54e-139305bcf820.png" alt="worldmap3" style="zoom:10%" />
+
+
+# Github files structures
+```
+|--data 
+|------data_project (Store input airport files and routes files)
+|--entry
+|------main.cpp (file for user to execute the program )
+|--lib (store cs255 and lodepeng that are copied from mp_maze)
+|--src (file to store all function declaratons and defintions[code])
+|--tests (store test suites)
+|--README.md (running instructions and program organization)
+|--result.md (written report)
+
+```
+
+# Instructions of how to run this program
+
+### Download project to your local with git clone command:
+```
+git clone https://github.com/YQiu-oo/yunheyue_final_project.git
+```
+### Make a build directory and let the cmake command workable before running program 
+```
+mkdir build
+cd build
+cmake ..
+```
+### Excute the program
+execute the program with make first or make main, then there are two required arguments for user to input:
+** Notice **
+1. the data file for airport 
+```
+make | make main
+```
+
+
+
+
+
+# Description of Test Suites
+### Command to run the test suites
+
+
+
+
+
 # Overview
 
 Airplanes are the most useful transportation for people traveling around the world. We want to make a useful tool that allows people to choose the shortest path between two countries so that people can save their time and enjoy their journey ^-^. The shortest path is one of the choices, if users want to choose their preferred paths, don't worry, our project allows users to choose different paths. Given the datasets, our code base will be able to guide its user in several aspects:
