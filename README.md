@@ -80,15 +80,26 @@ make test
 
 # Project Demo
 First make main, and use ./main first.dat second.dat to input the data set you want.
+
 ![f539f2e6ea48665d0d33cbbc61193e1](https://user-images.githubusercontent.com/92742463/207180203-22708d73-4417-495b-9d5d-21658a0f50a9.png)
+
 Input 1 to test shortest path by distance. Input Wewak as source airport, and input 0 to choose the first airport in this city.Then Input Sondrestrom as destination airport and input 0 to choose the first airport in this city.
+
 ![3bd610cc4711c72de34c50ef043d7a8](https://user-images.githubusercontent.com/92742463/207180235-c43bcf58-45ff-40dd-9e26-5aa0ef759dbc.png)
+
 The route in word and the route in graph are generate
+
 ![436b623c20a0eaa9b8b06036b88d7ce](https://user-images.githubusercontent.com/75405352/207177186-92965a48-f107-4b1b-9fc8-d26419779692.png)
+
 Input 2 to test shortest path by number of stops. Input Wewak as source airport, and input 0 to choose the first airport in this city.Then Input Sondrestrom as destination airport and input 0 to choose the first airport in this city.
+
 ![9e65abfa20700070d40ee0f3591e8d7](https://user-images.githubusercontent.com/92742463/207181199-1921beaf-88dc-46dd-8036-10e3b8208854.png)
+
 The route in word and the route in graph are generate
+
 ![13c0daf7cdcb1a7e8ae23fefe6161f1](https://user-images.githubusercontent.com/75405352/207177117-51c35ca1-559e-489a-b530-13e078313300.png)
+
 Input 0 to exist the program
+
 ![e7e67d325157f701779d517ebcfb7d3](https://user-images.githubusercontent.com/92742463/207180293-84ff7d69-6651-47de-b8c1-47e9bcd2f730.png)
 
