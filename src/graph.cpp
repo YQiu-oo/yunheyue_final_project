@@ -181,16 +181,9 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
                             all_distance[i][j] = all_distance[i][k] + all_distance[k][j];
                             all_path[i][j] = all_path[i][k];
                          }
-
-
                     }
                  }   
             }
-            
-
-            
-            
-            
         }
     }
     
@@ -212,34 +205,13 @@ vector<vertex> Graph::floyd_warshall(int start_id, int end_id) {
         
         start_idx = all_path[start_idx][end_idx] ;
         path.push_back(airports[airport_ids[start_idx]]);
+  
     }
-    // for(unsigned int i= 0; i < path.size();i++) {
-    //     cout << path[i].city << endl;
-
-    // }
-
 
     
    return path;
  }
  
-//  vector<vertex> Graph::shortest_Path(int start_id, int end_id){
-
-//     int start_idx = get_index(start_id);
-//     int end_idx = get_index(end_id);
-//     vector<vertex> shortest_path;
-//     shortest_Path_helper(start_idx,end_idx, shortest_path);
-//     return shortest_path;
-// }
-
-// void Graph::shortest_Path_helper(int start_idx, int end_idx, vector<vertex>& path) {
-//     if(all_path[start_idx][end_idx] == end_idx) {
-//         path.push_back(airports[get_index(end_idx)]);
-//         return;
-//     }
-//     path.push_back(airports[get_index(start_idx)]);
-//     shortest_Path_helper(all_path[start_idx][end_idx] ,end_idx , path);
-// }
 
 
 vector<vertex> Graph::bfs(int start_id, int end_id){
