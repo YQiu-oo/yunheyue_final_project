@@ -7,10 +7,7 @@
 
 # Github files structures
 ```
-|--data 
-|------data_project (Store input airport files and routes files)
-|--entry
-|------main.cpp (file for user to execute the program )
+
 |--data--
         |
         --data_project (Store input airport files and routes files)
